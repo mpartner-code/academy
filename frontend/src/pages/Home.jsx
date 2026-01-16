@@ -55,8 +55,8 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left Content */}
             <div className="max-w-xl">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-brand-border mb-6 animate-fade-in-down">
-                <span className="w-2 h-2 bg-[#b4dc19] rounded-full animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/40 mb-6 animate-fade-in-down">
+                <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
                 <span className="text-sm text-brand-muted font-medium">
                   {language === 'az' ? 'Yeni qruplar baslayir' : 'New groups starting'}
                 </span>
