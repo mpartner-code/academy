@@ -235,10 +235,13 @@ export const translations = {
 export const programs = [
   {
     id: 1,
+    slug: 'digital-marketing',
     titleAz: 'Digital Marketinq',
     titleEn: 'Digital Marketing',
     descriptionAz: 'SEO, SMM, Google Ads, Content Marketing və daha çox sahəni əhatə edən kompleks proqram.',
     descriptionEn: 'Comprehensive program covering SEO, SMM, Google Ads, Content Marketing and more.',
+    fullDescriptionAz: 'Digital Marketinq proqramı sizə müasir rəqəmsal marketinqin bütün əsas sahələrini öyrədəcək. SEO, SEM, sosial media marketinqi, email marketinq, kontent strategiyası və analitika kimi mövzuları əhatə edən bu kompleks proqram, sizi bazara hazır mütəxəssis edəcək.',
+    fullDescriptionEn: 'The Digital Marketing program will teach you all the core areas of modern digital marketing. This comprehensive program covering SEO, SEM, social media marketing, email marketing, content strategy and analytics will make you a market-ready specialist.',
     duration: '3 ay',
     durationEn: '3 months',
     modules: 12,
@@ -247,13 +250,64 @@ export const programs = [
     price: 1200,
     color: '#0ea5e9',
     icon: 'Monitor',
+    instructorIds: [1, 3],
+    learningsAz: [
+      'SEO strategiyaları və texniki optimizasiya',
+      'Google Ads kampaniyalarının qurulması',
+      'Sosial media strategiyası və kontent planlaması',
+      'Email marketinq avtomatlaşdırması',
+      'Google Analytics ilə data analizi',
+      'Performans marketinqi və ROI hesablaması'
+    ],
+    learningsEn: [
+      'SEO strategies and technical optimization',
+      'Setting up Google Ads campaigns',
+      'Social media strategy and content planning',
+      'Email marketing automation',
+      'Data analysis with Google Analytics',
+      'Performance marketing and ROI calculation'
+    ],
+    skillsAz: ['SEO/SEM', 'Google Ads', 'Meta Ads', 'Analytics', 'Content Strategy', 'Email Marketing'],
+    skillsEn: ['SEO/SEM', 'Google Ads', 'Meta Ads', 'Analytics', 'Content Strategy', 'Email Marketing'],
+    whoCanJoinAz: [
+      'Marketinq sahəsində karyera qurmaq istəyənlər',
+      'Biznes sahibləri və sahibkarlar',
+      'Mövcud marketoloqlar (bacarıqlarını artırmaq istəyənlər)',
+      'Freelancer olmaq istəyən mütəxəssislər'
+    ],
+    whoCanJoinEn: [
+      'Those who want to build a career in marketing',
+      'Business owners and entrepreneurs',
+      'Existing marketers (wanting to improve skills)',
+      'Professionals wanting to become freelancers'
+    ],
+    syllabus: [
+      { titleAz: 'Digital Marketinq əsasları', titleEn: 'Digital Marketing Fundamentals', weeksAz: '2 həftə', weeksEn: '2 weeks', topicsAz: ['Digital marketinqə giriş', 'Online müştəri səyahəti', 'Digital kanal növləri'], topicsEn: ['Introduction to digital marketing', 'Online customer journey', 'Types of digital channels'] },
+      { titleAz: 'SEO və SEM', titleEn: 'SEO and SEM', weeksAz: '3 həftə', weeksEn: '3 weeks', topicsAz: ['Keyword research', 'On-page SEO', 'Google Ads əsasları'], topicsEn: ['Keyword research', 'On-page SEO', 'Google Ads basics'] },
+      { titleAz: 'Social Media Marketing', titleEn: 'Social Media Marketing', weeksAz: '3 həftə', weeksEn: '3 weeks', topicsAz: ['Platform strategiyaları', 'Kontent planlaması', 'Paid social advertising'], topicsEn: ['Platform strategies', 'Content planning', 'Paid social advertising'] },
+      { titleAz: 'Email Marketing', titleEn: 'Email Marketing', weeksAz: '2 həftə', weeksEn: '2 weeks', topicsAz: ['Email kampaniyaları', 'Automation', 'A/B testing'], topicsEn: ['Email campaigns', 'Automation', 'A/B testing'] },
+      { titleAz: 'Analitika və Hesabat', titleEn: 'Analytics and Reporting', weeksAz: '2 həftə', weeksEn: '2 weeks', topicsAz: ['Google Analytics 4', 'KPI-lar', 'Dashboard yaratma'], topicsEn: ['Google Analytics 4', 'KPIs', 'Dashboard creation'] }
+    ],
+    faqAz: [
+      { q: 'Proqrama qoşulmaq üçün əvvəlcədən bilik tələb olunurmu?', a: 'Xeyr, proqram sıfırdan başlayır və heç bir əvvəlcədən bilik tələb etmir.' },
+      { q: 'Dərslər necə keçirilir?', a: 'Dərslər həftədə 3 dəfə, axşam saatlarında (19:00-21:00) keçirilir. Həm onlayn, həm də oflayn iştirak mümkündür.' },
+      { q: 'Proqram bitdikdən sonra sertifikat verilirmi?', a: 'Bəli, proqramı uğurla bitirən bütün iştirakçılara Marketinq Akademiyası sertifikatı verilir.' }
+    ],
+    faqEn: [
+      { q: 'Is prior knowledge required to join the program?', a: 'No, the program starts from scratch and does not require any prior knowledge.' },
+      { q: 'How are the classes conducted?', a: 'Classes are held 3 times a week, in the evening (19:00-21:00). Both online and offline participation is possible.' },
+      { q: 'Is a certificate given after completing the program?', a: 'Yes, all participants who successfully complete the program receive a Marketing Academy certificate.' }
+    ]
   },
   {
     id: 2,
+    slug: 'brand-management',
     titleAz: 'Brend Menecmenti',
     titleEn: 'Brand Management',
     descriptionAz: 'Brend strategiyası, pozisiyalandırma, brend kommunikasiyası və idarəetmə.',
     descriptionEn: 'Brand strategy, positioning, brand communication and management.',
+    fullDescriptionAz: 'Brend Menecmenti proqramı sizə güclü brendlər yaratmağın və idarə etməyin sirlərini öyrədəcək. Brend strategiyası, vizual identiklik, pozisiyalandırma və brend kommunikasiyası kimi mövzuları əhatə edən bu proqram, sizi professional brend meneceri edəcək.',
+    fullDescriptionEn: 'The Brand Management program will teach you the secrets of creating and managing strong brands. This program covering brand strategy, visual identity, positioning and brand communication will make you a professional brand manager.',
     duration: '2 ay',
     durationEn: '2 months',
     modules: 8,
@@ -262,13 +316,61 @@ export const programs = [
     price: 900,
     color: '#f59e0b',
     icon: 'Award',
+    instructorIds: [2],
+    learningsAz: [
+      'Brend strategiyası və arxitekturası',
+      'Vizual identiklik yaratma',
+      'Brend pozisiyalandırma metodları',
+      'Storytelling və brend narrativi',
+      'Brend kommunikasiya strategiyası',
+      'Brend dəyərini ölçmə'
+    ],
+    learningsEn: [
+      'Brand strategy and architecture',
+      'Creating visual identity',
+      'Brand positioning methods',
+      'Storytelling and brand narrative',
+      'Brand communication strategy',
+      'Measuring brand value'
+    ],
+    skillsAz: ['Brand Strategy', 'Visual Identity', 'Positioning', 'Storytelling', 'Brand Guidelines'],
+    skillsEn: ['Brand Strategy', 'Visual Identity', 'Positioning', 'Storytelling', 'Brand Guidelines'],
+    whoCanJoinAz: [
+      'Marketinq mütəxəssisləri',
+      'Brend meneceri olmaq istəyənlər',
+      'Dizaynerlər və kreativ mütəxəssislər',
+      'Startup qurucuları'
+    ],
+    whoCanJoinEn: [
+      'Marketing professionals',
+      'Those wanting to become brand managers',
+      'Designers and creative professionals',
+      'Startup founders'
+    ],
+    syllabus: [
+      { titleAz: 'Brend Strategiyası', titleEn: 'Brand Strategy', weeksAz: '2 həftə', weeksEn: '2 weeks', topicsAz: ['Brend konsepsiyaları', 'Brend arxitekturası', 'Pozisiyalandırma'], topicsEn: ['Brand concepts', 'Brand architecture', 'Positioning'] },
+      { titleAz: 'Brend İdentiklik', titleEn: 'Brand Identity', weeksAz: '2 həftə', weeksEn: '2 weeks', topicsAz: ['Vizual identiklik', 'Səs tonu', 'Brend qaydaları'], topicsEn: ['Visual identity', 'Tone of voice', 'Brand guidelines'] },
+      { titleAz: 'Brend Kommunikasiyası', titleEn: 'Brand Communication', weeksAz: '2 həftə', weeksEn: '2 weeks', topicsAz: ['Mesajlaşma strategiyası', 'Storytelling', 'PR əsasları'], topicsEn: ['Messaging strategy', 'Storytelling', 'PR basics'] },
+      { titleAz: 'Brend Ölçmə', titleEn: 'Brand Measurement', weeksAz: '2 həftə', weeksEn: '2 weeks', topicsAz: ['Brend araşdırması', 'Brend dəyəri', 'Brend sağlamlığı'], topicsEn: ['Brand research', 'Brand equity', 'Brand health'] }
+    ],
+    faqAz: [
+      { q: 'Bu proqram üçün marketinq təcrübəsi lazımdırmı?', a: 'Əsas marketinq anlayışlarına sahib olmaq tövsiyə olunur, lakin məcburi deyil.' },
+      { q: 'Real layihələr üzərində işləyəcəyikmi?', a: 'Bəli, proqram ərzində real brend case study-ləri üzərində işləyəcəksiniz.' }
+    ],
+    faqEn: [
+      { q: 'Is marketing experience required for this program?', a: 'Having basic marketing concepts is recommended but not mandatory.' },
+      { q: 'Will we work on real projects?', a: 'Yes, during the program you will work on real brand case studies.' }
+    ]
   },
   {
     id: 3,
+    slug: 'marketing-analytics',
     titleAz: 'Marketinq Analitikası',
     titleEn: 'Marketing Analytics',
     descriptionAz: 'Data-driven marketinq, Google Analytics, kampaniya analizi və hesabatlar.',
     descriptionEn: 'Data-driven marketing, Google Analytics, campaign analysis and reporting.',
+    fullDescriptionAz: 'Marketinq Analitikası proqramı sizə data əsaslı qərarlar verməyi və marketinq kampaniyalarının effektivliyini ölçməyi öyrədəcək. Google Analytics, data vizualizasiyası və ROI analizi kimi mövzuları əhatə edən bu proqram, sizi analitik düşüncəli marketoloq edəcək.',
+    fullDescriptionEn: 'The Marketing Analytics program will teach you to make data-driven decisions and measure the effectiveness of marketing campaigns. This program covering Google Analytics, data visualization and ROI analysis will make you an analytically minded marketer.',
     duration: '2.5 ay',
     durationEn: '2.5 months',
     modules: 10,
@@ -277,13 +379,61 @@ export const programs = [
     price: 1100,
     color: '#22d3ee',
     icon: 'BarChart3',
+    instructorIds: [3],
+    learningsAz: [
+      'Google Analytics 4 tam öyrənilməsi',
+      'Data vizualizasiyası və dashboard yaratma',
+      'A/B testing və eksperiment dizaynı',
+      'Attribution modelləri',
+      'ROI və ROAS hesablaması',
+      'Predictive analytics əsasları'
+    ],
+    learningsEn: [
+      'Complete mastery of Google Analytics 4',
+      'Data visualization and dashboard creation',
+      'A/B testing and experiment design',
+      'Attribution models',
+      'ROI and ROAS calculation',
+      'Basics of predictive analytics'
+    ],
+    skillsAz: ['Google Analytics', 'Data Studio', 'Excel/Sheets', 'SQL Basics', 'Data Visualization'],
+    skillsEn: ['Google Analytics', 'Data Studio', 'Excel/Sheets', 'SQL Basics', 'Data Visualization'],
+    whoCanJoinAz: [
+      'Digital marketoloqlar',
+      'Data analitiki olmaq istəyənlər',
+      'Performance marketinq mütəxəssisləri',
+      'Biznes analitikləri'
+    ],
+    whoCanJoinEn: [
+      'Digital marketers',
+      'Those wanting to become data analysts',
+      'Performance marketing specialists',
+      'Business analysts'
+    ],
+    syllabus: [
+      { titleAz: 'Analytics Əsasları', titleEn: 'Analytics Fundamentals', weeksAz: '2 həftə', weeksEn: '2 weeks', topicsAz: ['Data-driven marketinq', 'KPI-lar və metrikalar', 'Tracking setup'], topicsEn: ['Data-driven marketing', 'KPIs and metrics', 'Tracking setup'] },
+      { titleAz: 'Google Analytics 4', titleEn: 'Google Analytics 4', weeksAz: '3 həftə', weeksEn: '3 weeks', topicsAz: ['GA4 interfeysi', 'Event tracking', 'Audience yaratma'], topicsEn: ['GA4 interface', 'Event tracking', 'Audience creation'] },
+      { titleAz: 'Data Vizualizasiya', titleEn: 'Data Visualization', weeksAz: '2 həftə', weeksEn: '2 weeks', topicsAz: ['Looker Studio', 'Dashboard dizaynı', 'Storytelling with data'], topicsEn: ['Looker Studio', 'Dashboard design', 'Storytelling with data'] },
+      { titleAz: 'Advanced Analytics', titleEn: 'Advanced Analytics', weeksAz: '3 həftə', weeksEn: '3 weeks', topicsAz: ['Attribution', 'A/B testing', 'Cohort analysis'], topicsEn: ['Attribution', 'A/B testing', 'Cohort analysis'] }
+    ],
+    faqAz: [
+      { q: 'Proqramlaşdırma bilmək lazımdırmı?', a: 'Xeyr, proqramlaşdırma tələb olunmur. Əsas Excel/Sheets biliyiniz kifayətdir.' },
+      { q: 'Hansı tools istifadə edəcəyik?', a: 'Google Analytics 4, Looker Studio, Google Tag Manager, Excel/Sheets.' }
+    ],
+    faqEn: [
+      { q: 'Do I need to know programming?', a: 'No, programming is not required. Basic Excel/Sheets knowledge is sufficient.' },
+      { q: 'What tools will we use?', a: 'Google Analytics 4, Looker Studio, Google Tag Manager, Excel/Sheets.' }
+    ]
   },
   {
     id: 4,
+    slug: 'content-marketing',
     titleAz: 'Content Marketinq',
     titleEn: 'Content Marketing',
     descriptionAz: 'Kontent strategiyası, copywriting, storytelling və vizual kontent.',
     descriptionEn: 'Content strategy, copywriting, storytelling and visual content.',
+    fullDescriptionAz: 'Content Marketinq proqramı sizə cəlbedici və effektiv kontent yaratmağı öyrədəcək. Kontent strategiyası, copywriting, SEO yazıları və vizual kontent kimi mövzuları əhatə edən bu proqram, sizi professional kontent yaradıcısına çevirəcək.',
+    fullDescriptionEn: 'The Content Marketing program will teach you to create engaging and effective content. This program covering content strategy, copywriting, SEO writing and visual content will turn you into a professional content creator.',
     duration: '1.5 ay',
     durationEn: '1.5 months',
     modules: 6,
@@ -292,13 +442,59 @@ export const programs = [
     price: 700,
     color: '#f97316',
     icon: 'FileText',
+    instructorIds: [4],
+    learningsAz: [
+      'Kontent strategiyası yaratma',
+      'SEO copywriting texnikaları',
+      'Sosial media kontent planlaması',
+      'Storytelling əsasları',
+      'Blog və məqalə yazımı',
+      'Vizual kontent əsasları'
+    ],
+    learningsEn: [
+      'Creating content strategy',
+      'SEO copywriting techniques',
+      'Social media content planning',
+      'Basics of storytelling',
+      'Blog and article writing',
+      'Basics of visual content'
+    ],
+    skillsAz: ['Copywriting', 'SEO Writing', 'Content Strategy', 'Storytelling', 'Social Media Content'],
+    skillsEn: ['Copywriting', 'SEO Writing', 'Content Strategy', 'Storytelling', 'Social Media Content'],
+    whoCanJoinAz: [
+      'Yazı yazmağı sevənlər',
+      'Social media mütəxəssisləri',
+      'Bloggerlər və influencerlər',
+      'Marketinq komandası üzvləri'
+    ],
+    whoCanJoinEn: [
+      'Those who love writing',
+      'Social media specialists',
+      'Bloggers and influencers',
+      'Marketing team members'
+    ],
+    syllabus: [
+      { titleAz: 'Kontent Strategiyası', titleEn: 'Content Strategy', weeksAz: '1 həftə', weeksEn: '1 week', topicsAz: ['Kontent planlaması', 'Target audience', 'Content pillars'], topicsEn: ['Content planning', 'Target audience', 'Content pillars'] },
+      { titleAz: 'Copywriting', titleEn: 'Copywriting', weeksAz: '2 həftə', weeksEn: '2 weeks', topicsAz: ['Headlines', 'CTA yazımı', 'Persuasion techniques'], topicsEn: ['Headlines', 'CTA writing', 'Persuasion techniques'] },
+      { titleAz: 'SEO Content', titleEn: 'SEO Content', weeksAz: '1.5 həftə', weeksEn: '1.5 weeks', topicsAz: ['Keyword optimization', 'On-page SEO', 'Content structure'], topicsEn: ['Keyword optimization', 'On-page SEO', 'Content structure'] },
+      { titleAz: 'Visual Content', titleEn: 'Visual Content', weeksAz: '1.5 həftə', weeksEn: '1.5 weeks', topicsAz: ['Canva basics', 'Visual storytelling', 'Video content basics'], topicsEn: ['Canva basics', 'Visual storytelling', 'Video content basics'] }
+    ],
+    faqAz: [
+      { q: 'Yazı yazmaq təcrübəm yoxdur, qoşula bilərəmmi?', a: 'Bəli, proqram sıfırdan başlayır və yazı yazmaq texnikalarını addım-addım öyrədir.' }
+    ],
+    faqEn: [
+      { q: 'I have no writing experience, can I join?', a: 'Yes, the program starts from scratch and teaches writing techniques step by step.' }
+    ]
   },
   {
     id: 5,
+    slug: 'social-media-marketing',
     titleAz: 'Social Media Marketinq',
     titleEn: 'Social Media Marketing',
     descriptionAz: 'Instagram, Facebook, LinkedIn, TikTok strategiyaları və kampaniya idarəsi.',
     descriptionEn: 'Instagram, Facebook, LinkedIn, TikTok strategies and campaign management.',
+    fullDescriptionAz: 'Social Media Marketinq proqramı sizə bütün əsas sosial media platformalarında effektiv marketinq strategiyaları qurmağı öyrədəcək. Organik və paid strategiyalar, influencer marketinqi və community management mövzularını əhatə edir.',
+    fullDescriptionEn: 'The Social Media Marketing program will teach you to build effective marketing strategies on all major social media platforms. Covers organic and paid strategies, influencer marketing and community management.',
     duration: '2 ay',
     durationEn: '2 months',
     modules: 8,
@@ -307,13 +503,59 @@ export const programs = [
     price: 850,
     color: '#84cc16',
     icon: 'Share2',
+    instructorIds: [4, 1],
+    learningsAz: [
+      'Instagram marketinq strategiyası',
+      'Facebook və Meta Ads',
+      'LinkedIn B2B marketinqi',
+      'TikTok content və trends',
+      'Community management',
+      'Influencer marketinqi'
+    ],
+    learningsEn: [
+      'Instagram marketing strategy',
+      'Facebook and Meta Ads',
+      'LinkedIn B2B marketing',
+      'TikTok content and trends',
+      'Community management',
+      'Influencer marketing'
+    ],
+    skillsAz: ['Instagram', 'Facebook', 'LinkedIn', 'TikTok', 'Meta Ads', 'Community Management'],
+    skillsEn: ['Instagram', 'Facebook', 'LinkedIn', 'TikTok', 'Meta Ads', 'Community Management'],
+    whoCanJoinAz: [
+      'SMM mütəxəssisi olmaq istəyənlər',
+      'Biznes sahibləri',
+      'Freelancerlər',
+      'Content creator-lar'
+    ],
+    whoCanJoinEn: [
+      'Those wanting to become SMM specialists',
+      'Business owners',
+      'Freelancers',
+      'Content creators'
+    ],
+    syllabus: [
+      { titleAz: 'Social Media Əsasları', titleEn: 'Social Media Fundamentals', weeksAz: '1 həftə', weeksEn: '1 week', topicsAz: ['Platform seçimi', 'Content pillars', 'Posting strategy'], topicsEn: ['Platform selection', 'Content pillars', 'Posting strategy'] },
+      { titleAz: 'Instagram & Facebook', titleEn: 'Instagram & Facebook', weeksAz: '3 həftə', weeksEn: '3 weeks', topicsAz: ['Reels strategiyası', 'Stories', 'Meta Business Suite'], topicsEn: ['Reels strategy', 'Stories', 'Meta Business Suite'] },
+      { titleAz: 'LinkedIn & TikTok', titleEn: 'LinkedIn & TikTok', weeksAz: '2 həftə', weeksEn: '2 weeks', topicsAz: ['B2B content', 'TikTok trends', 'Algorithm hacks'], topicsEn: ['B2B content', 'TikTok trends', 'Algorithm hacks'] },
+      { titleAz: 'Paid Social', titleEn: 'Paid Social', weeksAz: '2 həftə', weeksEn: '2 weeks', topicsAz: ['Meta Ads Manager', 'Targeting', 'Campaign optimization'], topicsEn: ['Meta Ads Manager', 'Targeting', 'Campaign optimization'] }
+    ],
+    faqAz: [
+      { q: 'Şəxsi hesabım var, biznes hesabı açmalıyammı?', a: 'Proqram ərzində praktika üçün biznes/creator hesabı açmağı öyrənəcəksiniz.' }
+    ],
+    faqEn: [
+      { q: 'I have a personal account, do I need to open a business account?', a: 'During the program you will learn to open a business/creator account for practice.' }
+    ]
   },
   {
     id: 6,
+    slug: 'marketing-mba',
     titleAz: 'Marketinq MBA',
     titleEn: 'Marketing MBA',
     descriptionAz: 'Strateji marketinq, liderlik və biznes inkişafı üzrə intensiv proqram.',
     descriptionEn: 'Intensive program on strategic marketing, leadership and business development.',
+    fullDescriptionAz: 'Marketinq MBA proqramı senior marketoloqlar və marketinq direktorları üçün nəzərdə tutulmuş intensiv proqramdır. Strateji marketinq, liderlik, biznes inkişafı və marketinq bütçəsi idarəsi kimi mövzuları əhatə edir.',
+    fullDescriptionEn: 'The Marketing MBA program is an intensive program designed for senior marketers and marketing directors. Covers strategic marketing, leadership, business development and marketing budget management.',
     duration: '6 ay',
     durationEn: '6 months',
     modules: 24,
@@ -322,7 +564,53 @@ export const programs = [
     price: 3500,
     color: '#8b5cf6',
     icon: 'GraduationCap',
-  },
+    instructorIds: [1, 2, 3],
+    learningsAz: [
+      'Strateji marketinq planlaması',
+      'Marketinq bütçəsi idarəsi',
+      'Team leadership və management',
+      'Growth hacking strategiyaları',
+      'Biznes inkişafı və partnyorluqlar',
+      'C-level prezentasiya bacarıqları'
+    ],
+    learningsEn: [
+      'Strategic marketing planning',
+      'Marketing budget management',
+      'Team leadership and management',
+      'Growth hacking strategies',
+      'Business development and partnerships',
+      'C-level presentation skills'
+    ],
+    skillsAz: ['Strategic Planning', 'Leadership', 'Budget Management', 'Growth Hacking', 'Business Development'],
+    skillsEn: ['Strategic Planning', 'Leadership', 'Budget Management', 'Growth Hacking', 'Business Development'],
+    whoCanJoinAz: [
+      'Senior marketoloqlar (5+ il təcrübə)',
+      'Marketinq menecer və direktorları',
+      'CMO olmaq istəyənlər',
+      'Biznes sahibləri'
+    ],
+    whoCanJoinEn: [
+      'Senior marketers (5+ years experience)',
+      'Marketing managers and directors',
+      'Those wanting to become CMO',
+      'Business owners'
+    ],
+    syllabus: [
+      { titleAz: 'Strateji Marketinq', titleEn: 'Strategic Marketing', weeksAz: '6 həftə', weeksEn: '6 weeks', topicsAz: ['Market analysis', 'Competitive strategy', 'GTM planning'], topicsEn: ['Market analysis', 'Competitive strategy', 'GTM planning'] },
+      { titleAz: 'Leadership', titleEn: 'Leadership', weeksAz: '4 həftə', weeksEn: '4 weeks', topicsAz: ['Team building', 'Performance management', 'Stakeholder management'], topicsEn: ['Team building', 'Performance management', 'Stakeholder management'] },
+      { titleAz: 'Finance for Marketers', titleEn: 'Finance for Marketers', weeksAz: '4 həftə', weeksEn: '4 weeks', topicsAz: ['Budget planning', 'ROI optimization', 'Financial reporting'], topicsEn: ['Budget planning', 'ROI optimization', 'Financial reporting'] },
+      { titleAz: 'Growth & Innovation', titleEn: 'Growth & Innovation', weeksAz: '6 həftə', weeksEn: '6 weeks', topicsAz: ['Growth frameworks', 'Innovation management', 'Digital transformation'], topicsEn: ['Growth frameworks', 'Innovation management', 'Digital transformation'] },
+      { titleAz: 'Capstone Project', titleEn: 'Capstone Project', weeksAz: '4 həftə', weeksEn: '4 weeks', topicsAz: ['Real business case', 'Strategy presentation', 'Mentorship'], topicsEn: ['Real business case', 'Strategy presentation', 'Mentorship'] }
+    ],
+    faqAz: [
+      { q: 'Minimum neçə il təcrübə tələb olunur?', a: 'Ən azı 3-5 il marketinq və ya idarəetmə təcrübəsi tövsiyə olunur.' },
+      { q: 'Hissə-hissə ödəniş mümkündürmü?', a: 'Bəli, 3 hissəyə bölünmüş ödəniş planı mövcuddur.' }
+    ],
+    faqEn: [
+      { q: 'How many years of experience is required minimum?', a: 'At least 3-5 years of marketing or management experience is recommended.' },
+      { q: 'Is installment payment possible?', a: 'Yes, a payment plan divided into 3 parts is available.' }
+    ]
+  }
 ];
 
 export const instructors = [
