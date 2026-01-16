@@ -6,6 +6,7 @@ import Footer from './components/Layout/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Programs from './pages/Programs';
+import ProgramDetail from './pages/ProgramDetail';
 import Instructors from './pages/Instructors';
 import Events from './pages/Events';
 import Community from './pages/Community';
@@ -30,6 +31,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/programs" element={<Programs />} />
+              <Route path="/programs/:slug" element={<ProgramDetail />} />
               <Route path="/syllabus" element={<Syllabus />} />
               <Route path="/instructors" element={<Instructors />} />
               <Route path="/community" element={<Community />} />
