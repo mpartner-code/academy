@@ -313,7 +313,7 @@ const Home = () => {
       </section>
 
       {/* Partners */}
-      <section className="py-16 bg-white">
+      <section className="py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <p className="text-center text-brand-muted mb-8">
             {language === 'az'
@@ -324,7 +324,7 @@ const Home = () => {
             {corporateClients.map((client) => (
               <div
                 key={client.id}
-                className="grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
+                className="grayscale hover:grayscale-0 opacity-50 hover:opacity-100 transition-all duration-300"
               >
                 <img
                   src={client.logo}
@@ -340,10 +340,11 @@ const Home = () => {
       {/* CTA Section */}
       <section className="section-padding relative">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="relative bg-brand-primary rounded-2xl p-8 md:p-12 lg:p-16 overflow-hidden">
-            <div className="absolute inset-0 opacity-10">
+          <div className="relative rounded-3xl p-8 md:p-12 lg:p-16 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-brand-primary via-brand-primary to-brand-accent"></div>
+            <div className="absolute inset-0 opacity-20">
               <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-accent rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl" />
             </div>
 
             <div className="relative z-10 max-w-2xl">
@@ -361,7 +362,7 @@ const Home = () => {
                 <Link to="/apply">
                   <Button
                     size="lg"
-                    className="bg-white text-brand-primary hover:bg-gray-100 px-8"
+                    className="bg-white text-brand-primary hover:bg-white/90 px-8 shadow-lg"
                   >
                     {t.nav.apply}
                     <ArrowRight className="w-4 h-4 ml-2" />
@@ -371,7 +372,7 @@ const Home = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-white/30 text-white hover:bg-white/10 px-8"
+                    className="border-white/30 text-white hover:bg-white/10 px-8 backdrop-blur-sm"
                   >
                     {t.programs.details}
                   </Button>
