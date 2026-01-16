@@ -235,27 +235,53 @@ const Home = () => {
             {instructors.map((instructor, idx) => (
               <div
                 key={instructor.id}
-                className="group text-center glass-card rounded-2xl p-6"
+                className="group relative rounded-3xl overflow-hidden animate-fade-in-up"
+                style={{ animationDelay: `${idx * 0.1}s` }}
               >
-                <div className="relative w-24 h-24 mx-auto mb-4">
+                {/* Full Image Background */}
+                <div className="aspect-[3/4] relative">
                   <img
                     src={instructor.image}
                     alt={instructor.name}
-                    className="w-full h-full rounded-full object-cover border-4 border-white/80 group-hover:border-brand-primary transition-colors shadow-lg"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-gradient-to-r from-brand-primary to-brand-accent rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">
-                    {instructor.experience}+
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                  
+                  {/* Experience Badge */}
+                  <div className="absolute top-4 right-4 glass px-3 py-1.5 rounded-full">
+                    <span className="text-sm font-bold text-brand-dark">
+                      {instructor.experience}+ {language === 'az' ? 'il' : 'yrs'}
+                    </span>
+                  </div>
+                  
+                  {/* Content Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <div className="transform transition-transform duration-300 group-hover:-translate-y-2">
+                      <h4 className="font-bold text-white text-xl mb-1">
+                        {instructor.name}
+                      </h4>
+                      <p className="text-slate-300 text-sm mb-2">
+                        {language === 'az' ? instructor.titleAz : instructor.titleEn}
+                      </p>
+                      <p className="text-brand-primary font-medium text-sm mb-4">
+                        {instructor.company}
+                      </p>
+                      
+                      {/* Skills - Hidden by default, shown on hover */}
+                      <div className="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        {instructor.specialties?.slice(0, 3).map((spec, i) => (
+                          <span
+                            key={i}
+                            className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs"
+                          >
+                            {spec}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <h4 className="font-semibold text-brand-dark mb-1">
-                  {instructor.name}
-                </h4>
-                <p className="text-sm text-brand-muted mb-2">
-                  {language === 'az' ? instructor.titleAz : instructor.titleEn}
-                </p>
-                <p className="text-xs text-brand-primary font-medium">
-                  {instructor.company}
-                </p>
               </div>
             ))}
           </div>
