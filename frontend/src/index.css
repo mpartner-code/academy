@@ -5,25 +5,31 @@
 @tailwind utilities;
 
 :root {
-  /* Brand Colors - Based on DB Design Guidelines */
-  --brand-primary: #61525a;
-  --brand-accent: #5f9dff;
-  --brand-accent-light: rgba(95, 157, 255, 0.4);
-  --brand-dark: #1e1919;
-  --brand-light: #f7f5f2;
-  --brand-muted: #736c64;
-  --brand-muted-dark: #bbb5ae;
-  --brand-border: rgba(30, 25, 25, 0.1);
+  /* Brand Colors - Modern & Vibrant */
+  --brand-primary: #0ea5e9;
+  --brand-primary-dark: #0284c7;
+  --brand-accent: #8b5cf6;
+  --brand-accent-light: rgba(139, 92, 246, 0.3);
+  --brand-dark: #0f172a;
+  --brand-light: #f8fafc;
+  --brand-muted: #64748b;
+  --brand-muted-dark: #94a3b8;
+  --brand-border: rgba(15, 23, 42, 0.08);
   
   /* Identity Colors */
-  --color-yellow: #fad24b;
-  --color-cyan: #3dd3ee;
-  --color-orange: #ff8c19;
-  --color-lime: #b4dc19;
-  --color-purple: #c8aff0;
-  --color-navy: #283750;
-  --color-plum: #78286e;
-  --color-tangerine: #ff8c19;
+  --color-yellow: #fbbf24;
+  --color-cyan: #22d3ee;
+  --color-orange: #f97316;
+  --color-lime: #84cc16;
+  --color-purple: #a78bfa;
+  --color-navy: #1e3a5f;
+  --color-plum: #a855f7;
+  --color-tangerine: #fb923c;
+  
+  /* Glass Effect */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 * {
