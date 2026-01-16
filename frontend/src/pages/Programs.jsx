@@ -165,9 +165,10 @@ const Programs = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="section-padding bg-brand-dark text-white">
-        <div className="container mx-auto px-4 lg:px-8">
-          <h2 className="text-3xl font-bold mb-12 text-center">
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-dark via-slate-900 to-brand-dark"></div>
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <h2 className="text-3xl font-bold mb-12 text-center text-white">
             {language === 'az' ? 'Niyə bizi seçməlisiniz?' : 'Why choose us?'}
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -199,15 +200,15 @@ const Programs = () => {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-xl bg-white/5 border border-white/10"
+                className="p-6 rounded-2xl glass-dark"
               >
-                <div className="w-10 h-10 rounded-full bg-brand-accent/20 flex items-center justify-center mb-4">
-                  <Check className="w-5 h-5 text-brand-accent" />
+                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-brand-primary to-brand-accent flex items-center justify-center mb-4">
+                  <Check className="w-5 h-5 text-white" />
                 </div>
-                <h4 className="font-semibold mb-2">
+                <h4 className="font-semibold mb-2 text-white">
                   {language === 'az' ? item.titleAz : item.titleEn}
                 </h4>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-slate-400">
                   {language === 'az' ? item.descAz : item.descEn}
                 </p>
               </div>
