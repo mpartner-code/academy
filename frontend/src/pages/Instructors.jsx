@@ -25,56 +25,68 @@ const Instructors = () => {
             {instructors.map((instructor, idx) => (
               <div
                 key={instructor.id}
-                className="group bg-white rounded-2xl overflow-hidden border border-brand-border hover:shadow-xl transition-all duration-300"
+                className="group relative rounded-3xl overflow-hidden animate-fade-in-up shadow-lg"
+                style={{ animationDelay: `${idx * 0.1}s` }}
               >
-                <div className="relative">
+                {/* Full Image */}
+                <div className="aspect-[3/4] relative">
                   <img
                     src={instructor.image}
                     alt={instructor.name}
-                    className="w-full aspect-square object-cover"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-4">
-                    <div className="flex gap-3">
-                      <a
-                        href="#"
-                        className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-brand-accent transition-colors"
-                      >
-                        <Linkedin className="w-4 h-4" />
-                      </a>
-                      <a
-                        href="#"
-                        className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-brand-accent transition-colors"
-                      >
-                        <Mail className="w-4 h-4" />
-                      </a>
+                  
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                  
+                  {/* Experience Badge */}
+                  <div className="absolute top-4 right-4 glass px-4 py-2 rounded-full">
+                    <span className="text-sm font-bold text-brand-dark">
+                      {instructor.experience}+ {t.instructors.experience}
+                    </span>
+                  </div>
+                  
+                  {/* Social Links - shown on hover */}
+                  <div className="absolute top-4 left-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0">
+                    <a
+                      href="#"
+                      className="w-10 h-10 rounded-full glass flex items-center justify-center text-brand-dark hover:bg-brand-primary hover:text-white transition-colors"
+                    >
+                      <Linkedin className="w-4 h-4" />
+                    </a>
+                    <a
+                      href="#"
+                      className="w-10 h-10 rounded-full glass flex items-center justify-center text-brand-dark hover:bg-brand-primary hover:text-white transition-colors"
+                    >
+                      <Mail className="w-4 h-4" />
+                    </a>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <div className="transform transition-all duration-300 group-hover:-translate-y-2">
+                      <h3 className="font-bold text-white text-xl mb-1">
+                        {instructor.name}
+                      </h3>
+                      <p className="text-slate-300 text-sm mb-2">
+                        {language === 'az' ? instructor.titleAz : instructor.titleEn}
+                      </p>
+                      <p className="text-brand-primary font-medium text-sm mb-4">
+                        {instructor.company}
+                      </p>
+                      
+                      {/* Specialties */}
+                      <div className="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        {instructor.specialties.map((spec, i) => (
+                          <span
+                            key={i}
+                            className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs"
+                          >
+                            {spec}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div className="p-5">
-                  <h3 className="font-bold text-brand-dark text-lg mb-1">
-                    {instructor.name}
-                  </h3>
-                  <p className="text-sm text-brand-muted mb-3">
-                    {language === 'az' ? instructor.titleAz : instructor.titleEn}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-medium text-brand-accent">
-                      {instructor.company}
-                    </span>
-                    <span className="flex items-center gap-1 text-xs text-brand-muted">
-                      <Award className="w-3 h-3" />
-                      {instructor.experience} {t.instructors.experience}
-                    </span>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {instructor.specialties.map((spec, i) => (
-                      <span
-                        key={i}
-                        className="px-2 py-1 bg-brand-light rounded text-xs text-brand-muted"
-                      >
-                        {spec}
-                      </span>
-                    ))}
                   </div>
                 </div>
               </div>
