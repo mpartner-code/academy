@@ -75,7 +75,7 @@ const Home = () => {
                 <Link to="/programs">
                   <Button
                     size="lg"
-                    className="bg-brand-primary hover:bg-brand-primary/90 text-white px-6 btn-hover"
+                    className="bg-gradient-to-r from-brand-primary to-brand-accent hover:opacity-90 text-white px-6 shadow-lg shadow-brand-primary/25 btn-hover"
                   >
                     {t.hero.cta}
                     <ArrowRight className="w-4 h-4 ml-2" />
@@ -85,7 +85,7 @@ const Home = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-brand-border text-brand-dark hover:bg-brand-light px-6"
+                    className="border-brand-primary/30 text-brand-dark hover:bg-brand-primary/10 px-6 backdrop-blur-sm bg-white/50"
                   >
                     <Play className="w-4 h-4 mr-2" />
                     {t.hero.ctaSecondary}
