@@ -157,7 +157,7 @@ const Home = () => {
       </section>
 
       {/* Programs Section */}
-      <section className="section-padding bg-white relative">
+      <section className="section-padding relative">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
@@ -169,8 +169,8 @@ const Home = () => {
               </p>
             </div>
             <Link to="/programs">
-              <Button variant="outline" className="border-brand-border group">
-                {language === 'az' ? 'Hamisına bax' : 'View all'}
+              <Button variant="outline" className="border-brand-primary/30 bg-white/50 backdrop-blur-sm group hover:bg-brand-primary hover:text-white hover:border-brand-primary">
+                {language === 'az' ? 'Hamısına bax' : 'View all'}
                 <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
@@ -182,10 +182,10 @@ const Home = () => {
               return (
                 <div
                   key={program.id}
-                  className="group bg-brand-light rounded-xl p-6 border border-transparent hover:border-brand-border hover:bg-white transition-all duration-300 card-hover"
+                  className="group glass-card rounded-2xl p-6"
                 >
                   <div
-                    className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 transition-transform group-hover:scale-110"
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110"
                     style={{ backgroundColor: `${program.color}20` }}
                   >
                     {IconComponent && (
@@ -195,7 +195,7 @@ const Home = () => {
                       />
                     )}
                   </div>
-                  <h3 className="text-lg font-semibold text-brand-dark mb-2 group-hover:text-brand-accent transition-colors">
+                  <h3 className="text-lg font-semibold text-brand-dark mb-2 group-hover:text-brand-primary transition-colors">
                     {language === 'az' ? program.titleAz : program.titleEn}
                   </h3>
                   <p className="text-brand-muted text-sm mb-4 line-clamp-2">
