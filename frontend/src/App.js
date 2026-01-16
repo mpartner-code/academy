@@ -18,6 +18,7 @@ import Corporate from './pages/Corporate';
 import Alumni from './pages/Alumni';
 import Partners from './pages/Partners';
 import Syllabus from './pages/Syllabus';
+import Certification from './pages/Certification';
 import './App.css';
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
               <Route path="/corporate" element={<Corporate />} />
               <Route path="/alumni" element={<Alumni />} />
               <Route path="/partners" element={<Partners />} />
+              <Route path="/certification" element={<Certification />} />
               <Route path="/apply" element={<Apply />} />
               <Route path="/quiz" element={<Quiz />} />
             </Routes>
