@@ -46,7 +46,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-5">
-              <div className="w-10 h-10 rounded-lg bg-brand-accent flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-brand-primary to-brand-accent flex items-center justify-center">
                 <GraduationCap className="w-6 h-6 text-white" />
               </div>
               <div>
