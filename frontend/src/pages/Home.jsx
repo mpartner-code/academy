@@ -230,15 +230,15 @@ const Home = () => {
             {instructors.map((instructor, idx) => (
               <div
                 key={instructor.id}
-                className="group text-center bg-white rounded-xl p-6 border border-brand-border hover:shadow-lg transition-all duration-300"
+                className="group text-center glass-card rounded-2xl p-6"
               >
                 <div className="relative w-24 h-24 mx-auto mb-4">
                   <img
                     src={instructor.image}
                     alt={instructor.name}
-                    className="w-full h-full rounded-full object-cover border-4 border-brand-light group-hover:border-brand-accent transition-colors"
+                    className="w-full h-full rounded-full object-cover border-4 border-white/80 group-hover:border-brand-primary transition-colors shadow-lg"
                   />
-                  <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-brand-accent rounded-full flex items-center justify-center text-white text-xs font-bold">
+                  <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-gradient-to-r from-brand-primary to-brand-accent rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">
                     {instructor.experience}+
                   </div>
                 </div>
@@ -248,7 +248,7 @@ const Home = () => {
                 <p className="text-sm text-brand-muted mb-2">
                   {language === 'az' ? instructor.titleAz : instructor.titleEn}
                 </p>
-                <p className="text-xs text-brand-accent font-medium">
+                <p className="text-xs text-brand-primary font-medium">
                   {instructor.company}
                 </p>
               </div>
@@ -257,7 +257,7 @@ const Home = () => {
 
           <div className="text-center mt-10">
             <Link to="/instructors">
-              <Button variant="outline" className="border-brand-border">
+              <Button variant="outline" className="border-brand-primary/30 bg-white/50 backdrop-blur-sm hover:bg-brand-primary hover:text-white hover:border-brand-primary">
                 {language === 'az' ? 'Bütün təlimçilər' : 'All instructors'}
                 <ChevronRight className="w-4 h-4 ml-1" />
               </Button>
