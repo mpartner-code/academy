@@ -267,39 +267,40 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="section-padding bg-brand-dark text-white relative overflow-hidden">
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-dark via-slate-900 to-brand-dark"></div>
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-64 h-64 bg-brand-accent/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-[#c8aff0]/10 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-primary/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-brand-accent/20 rounded-full blur-3xl" />
         </div>
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
               {t.alumni.title}
             </h2>
-            <p className="text-gray-400 text-lg">{t.alumni.subtitle}</p>
+            <p className="text-slate-400 text-lg">{t.alumni.subtitle}</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {alumni.map((person, idx) => (
               <div
                 key={person.id}
-                className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-colors"
+                className="glass-dark rounded-2xl p-6 hover:bg-white/10 transition-colors"
               >
-                <Quote className="w-8 h-8 text-brand-accent/50 mb-4" />
-                <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                <Quote className="w-8 h-8 text-brand-primary/50 mb-4" />
+                <p className="text-slate-300 text-sm leading-relaxed mb-6">
                   {language === 'az' ? person.testimonialAz : person.testimonialEn}
                 </p>
                 <div className="flex items-center gap-3">
                   <img
                     src={person.image}
                     alt={person.name}
-                    className="w-12 h-12 rounded-full object-cover"
+                    className="w-12 h-12 rounded-full object-cover ring-2 ring-brand-primary/30"
                   />
                   <div>
                     <h5 className="font-semibold text-white">{person.name}</h5>
-                    <p className="text-xs text-gray-400">
+                    <p className="text-xs text-slate-400">
                       {language === 'az' ? person.titleAz : person.titleEn} @{' '}
                       {person.company}
                     </p>
