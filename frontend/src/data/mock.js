@@ -245,7 +245,7 @@ export const programs = [
     level: 'Başlanğıc',
     levelEn: 'Beginner',
     price: 1200,
-    color: '#5f9dff',
+    color: '#0ea5e9',
     icon: 'Monitor',
   },
   {
@@ -260,7 +260,7 @@ export const programs = [
     level: 'Orta',
     levelEn: 'Intermediate',
     price: 900,
-    color: '#fad24b',
+    color: '#f59e0b',
     icon: 'Award',
   },
   {
@@ -275,7 +275,7 @@ export const programs = [
     level: 'İrəliləyən',
     levelEn: 'Advanced',
     price: 1100,
-    color: '#3dd3ee',
+    color: '#22d3ee',
     icon: 'BarChart3',
   },
   {
@@ -290,7 +290,7 @@ export const programs = [
     level: 'Başlanğıc',
     levelEn: 'Beginner',
     price: 700,
-    color: '#ff8c19',
+    color: '#f97316',
     icon: 'FileText',
   },
   {
@@ -305,7 +305,7 @@ export const programs = [
     level: 'Başlanğıc',
     levelEn: 'Beginner',
     price: 850,
-    color: '#b4dc19',
+    color: '#84cc16',
     icon: 'Share2',
   },
   {
@@ -320,7 +320,7 @@ export const programs = [
     level: 'İrəliləyən',
     levelEn: 'Advanced',
     price: 3500,
-    color: '#c8aff0',
+    color: '#8b5cf6',
     icon: 'GraduationCap',
   },
 ];
