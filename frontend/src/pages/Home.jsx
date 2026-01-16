@@ -386,10 +386,10 @@ const Home = () => {
 
 const StatCard = ({ value, label, color, icon: Icon, delay }) => (
   <div
-    className={`bg-white rounded-xl p-6 border border-brand-border shadow-sm hover:shadow-md transition-shadow animate-fade-in-up ${delay}`}
+    className={`glass-card rounded-2xl p-6 animate-fade-in-up ${delay}`}
   >
     <div
-      className="w-10 h-10 rounded-lg flex items-center justify-center mb-3"
+      className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
       style={{ backgroundColor: `${color}20` }}
     >
       <Icon className="w-5 h-5" style={{ color }} />
