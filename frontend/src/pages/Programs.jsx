@@ -66,10 +66,10 @@ const Programs = () => {
               <button
                 key={level.value}
                 onClick={() => setSelectedLevel(level.value)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
                   selectedLevel === level.value
-                    ? 'bg-brand-primary text-white'
-                    : 'bg-white text-brand-dark border border-brand-border hover:border-brand-primary'
+                    ? 'bg-gradient-to-r from-brand-primary to-brand-accent text-white shadow-lg shadow-brand-primary/25'
+                    : 'glass-card text-brand-dark hover:bg-white'
                 }`}
               >
                 {language === 'az' ? level.labelAz : level.labelEn}
@@ -84,7 +84,7 @@ const Programs = () => {
               return (
                 <div
                   key={program.id}
-                  className="group bg-white rounded-2xl overflow-hidden border border-brand-border hover:shadow-xl transition-all duration-300"
+                  className="group glass-card rounded-2xl overflow-hidden"
                 >
                   {/* Header */}
                   <div
