@@ -143,17 +143,17 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-white/10 relative z-10">
         <div className="container mx-auto px-4 lg:px-8 py-5">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
             <p>
               © {new Date().getFullYear()} Marketinq Akademiyası. {t.footer.rights}.
             </p>
             <div className="flex items-center gap-6">
-              <Link to="/privacy" className="hover:text-gray-300 transition-colors">
+              <Link to="/privacy" className="hover:text-slate-300 transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="hover:text-gray-300 transition-colors">
+              <Link to="/terms" className="hover:text-slate-300 transition-colors">
                 Terms of Service
               </Link>
             </div>
