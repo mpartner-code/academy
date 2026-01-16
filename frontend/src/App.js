@@ -1,53 +1,52 @@
-import { useEffect } from "react";
-import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { LanguageProvider } from './context/LanguageContext';
+import Header from './components/Layout/Header';
+import Footer from './components/Layout/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
+import Programs from './pages/Programs';
+import Instructors from './pages/Instructors';
+import Events from './pages/Events';
+import Community from './pages/Community';
+import Apply from './pages/Apply';
+import Quiz from './pages/Quiz';
+import Scholarship from './pages/Scholarship';
+import Philosophy from './pages/Philosophy';
+import Corporate from './pages/Corporate';
+import Alumni from './pages/Alumni';
+import Partners from './pages/Partners';
+import Syllabus from './pages/Syllabus';
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <LanguageProvider>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
+        <div className="min-h-screen flex flex-col">
+          <Header />
+          <div className="flex-1">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/programs" element={<Programs />} />
+              <Route path="/syllabus" element={<Syllabus />} />
+              <Route path="/instructors" element={<Instructors />} />
+              <Route path="/community" element={<Community />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/scholarship" element={<Scholarship />} />
+              <Route path="/philosophy" element={<Philosophy />} />
+              <Route path="/corporate" element={<Corporate />} />
+              <Route path="/alumni" element={<Alumni />} />
+              <Route path="/partners" element={<Partners />} />
+              <Route path="/apply" element={<Apply />} />
+              <Route path="/quiz" element={<Quiz />} />
+            </Routes>
+          </div>
+          <Footer />
+        </div>
       </BrowserRouter>
-    </div>
+    </LanguageProvider>
   );
 }
 
