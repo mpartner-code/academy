@@ -180,9 +180,10 @@ const Home = () => {
             {programs.slice(0, 6).map((program, idx) => {
               const IconComponent = iconMap[program.icon];
               return (
-                <div
+                <Link
+                  to={`/programs/${program.slug}`}
                   key={program.id}
-                  className="group glass-card rounded-2xl p-6"
+                  className="group glass-card rounded-2xl p-6 cursor-pointer"
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110"
@@ -205,11 +206,15 @@ const Home = () => {
                     <span className="text-brand-muted">
                       {language === 'az' ? program.duration : program.durationEn}
                     </span>
-                    <span className="font-semibold text-brand-dark">
-                      {program.price} AZN
+                    <span
+                      className="font-medium flex items-center gap-1 transition-colors"
+                      style={{ color: program.color }}
+                    >
+                      {language === 'az' ? 'Ətraflı' : 'Learn more'}
+                      <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </span>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
