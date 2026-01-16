@@ -138,7 +138,7 @@ const Programs = () => {
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-between pt-4 border-t border-brand-border">
+                    <div className="flex items-center justify-between pt-4 border-t border-brand-border/50">
                       <div>
                         <span className="text-xs text-brand-muted">
                           {t.programs.price}
@@ -149,11 +149,7 @@ const Programs = () => {
                       </div>
                       <Link to="/apply">
                         <Button
-                          className="group/btn"
-                          style={{
-                            backgroundColor: program.color,
-                            color: 'white',
-                          }}
+                          className="group/btn bg-gradient-to-r from-brand-primary to-brand-accent hover:opacity-90 text-white shadow-lg"
                         >
                           {t.programs.apply}
                           <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover/btn:translate-x-1" />
