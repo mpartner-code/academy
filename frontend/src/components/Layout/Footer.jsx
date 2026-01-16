@@ -83,7 +83,7 @@ const Footer = () => {
                 <li key={idx}>
                   <Link
                     to={link.path}
-                    className="text-gray-400 text-sm hover:text-brand-accent transition-colors"
+                    className="text-slate-400 text-sm hover:text-brand-primary transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -100,7 +100,7 @@ const Footer = () => {
                 <li key={idx}>
                   <Link
                     to={link.path}
-                    className="text-gray-400 text-sm hover:text-brand-accent transition-colors"
+                    className="text-slate-400 text-sm hover:text-brand-primary transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -114,25 +114,25 @@ const Footer = () => {
             <h4 className="font-semibold text-white mb-5">{t.footer.contact}</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400 text-sm">
+                <MapPin className="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" />
+                <span className="text-slate-400 text-sm">
                   Nizami küç. 203B, {t.footer.address}
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-brand-accent flex-shrink-0" />
+                <Phone className="w-5 h-5 text-brand-primary flex-shrink-0" />
                 <a
                   href="tel:+994501234567"
-                  className="text-gray-400 text-sm hover:text-brand-accent transition-colors"
+                  className="text-slate-400 text-sm hover:text-brand-primary transition-colors"
                 >
                   +994 50 123 45 67
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-brand-accent flex-shrink-0" />
+                <Mail className="w-5 h-5 text-brand-primary flex-shrink-0" />
                 <a
                   href="mailto:info@marketinq.az"
-                  className="text-gray-400 text-sm hover:text-brand-accent transition-colors"
+                  className="text-slate-400 text-sm hover:text-brand-primary transition-colors"
                 >
                   info@marketinq.az
                 </a>
