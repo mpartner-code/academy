@@ -82,9 +82,10 @@ const Programs = () => {
             {filteredPrograms.map((program) => {
               const IconComponent = iconMap[program.icon];
               return (
-                <div
+                <Link
+                  to={`/programs/${program.slug}`}
                   key={program.id}
-                  className="group glass-card rounded-2xl overflow-hidden"
+                  className="group glass-card rounded-2xl overflow-hidden cursor-pointer"
                 >
                   {/* Header */}
                   <div
@@ -93,7 +94,7 @@ const Programs = () => {
                   >
                     <div className="flex items-start justify-between mb-4">
                       <div
-                        className="w-14 h-14 rounded-xl flex items-center justify-center"
+                        className="w-14 h-14 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110"
                         style={{ backgroundColor: program.color }}
                       >
                         {IconComponent && (
@@ -110,7 +111,7 @@ const Programs = () => {
                         {language === 'az' ? program.level : program.levelEn}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold text-brand-dark">
+                    <h3 className="text-xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors">
                       {language === 'az' ? program.titleAz : program.titleEn}
                     </h3>
                   </div>
@@ -147,17 +148,16 @@ const Programs = () => {
                           {program.price} AZN
                         </div>
                       </div>
-                      <Link to="/apply">
-                        <Button
-                          className="group/btn bg-gradient-to-r from-brand-primary to-brand-accent hover:opacity-90 text-white shadow-lg"
-                        >
-                          {t.programs.apply}
-                          <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover/btn:translate-x-1" />
-                        </Button>
-                      </Link>
+                      <div
+                        className="flex items-center gap-1 font-medium transition-colors"
+                        style={{ color: program.color }}
+                      >
+                        {language === 'az' ? 'Proqramla tanış ol' : 'Learn more'}
+                        <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
