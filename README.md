@@ -10,11 +10,16 @@ Reusable foundation for AI-assisted client websites.
 
 ## Local development
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
 Copy `.env.example` to `.env.local` and add project-specific credentials. Never commit secrets.
+
+The project uses Node.js 22 and npm 10. Hostinger must run `npm ci` from the
+repository root and use `npm run build:hostinger` as its build command. That
+command applies the existing Prisma migrations to Hostinger MySQL before the
+Next.js production build. `DATABASE_URL` must be available to the build.
 
 ## Delivery workflow
 Feature request → feature branch → implementation → automated quality gate → review → merge → deployment.
