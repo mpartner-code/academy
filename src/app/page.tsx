@@ -1,9 +1,18 @@
 import { db } from "@/lib/db";
-import { getFallbackSnapshot } from "@/lib/admin-fallback";
+import { getFallbackSnapshot, isFallbackStorageEnabled } from "@/lib/admin-fallback";
 
 export const dynamic = "force-dynamic";
 
 async function getHomeContent() {
+  if (isFallbackStorageEnabled()) {
+    const fallback = getFallbackSnapshot();
+    return {
+      message: fallback.message,
+      messageEnabled: fallback.messageEnabled,
+      posts: fallback.posts.filter((post) => post.published).slice(0, 3),
+    };
+  }
+
   try {
     const [messageSetting, enabledSetting, posts] = await Promise.all([
       db.setting.findUnique({ where: { key: "home_message" } }),

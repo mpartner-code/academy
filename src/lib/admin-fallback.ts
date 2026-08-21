@@ -20,6 +20,10 @@ const globalForFallback = globalThis as unknown as {
   academyAdminFallback?: FallbackState;
 };
 
+export function isFallbackStorageEnabled() {
+  return process.env.ADMIN_STORAGE_MODE === "memory";
+}
+
 function getState() {
   globalForFallback.academyAdminFallback ??= {
     message: "",

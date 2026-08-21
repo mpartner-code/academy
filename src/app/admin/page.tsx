@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { ADMIN_COOKIE_NAME, verifyAdminSession } from "@/lib/admin-auth";
-import { getFallbackSnapshot } from "@/lib/admin-fallback";
+import { getFallbackSnapshot, isFallbackStorageEnabled } from "@/lib/admin-fallback";
 import { db } from "@/lib/db";
 import { AdminSubmitButton } from "@/components/admin-submit-button";
 
@@ -26,21 +26,28 @@ export default async function AdminPage({
   let messageEnabled = false;
   let posts: Array<{ id: number; title: string; published: boolean; createdAt: Date }> = [];
 
-  try {
-    const [messageSetting, enabledSetting, databasePosts] = await Promise.all([
-      db.setting.findUnique({ where: { key: "home_message" } }),
-      db.setting.findUnique({ where: { key: "home_message_enabled" } }),
-      db.post.findMany({ orderBy: { createdAt: "desc" }, take: 8 }),
-    ]);
-
-    message = typeof messageSetting?.value === "string" ? messageSetting.value : "";
-    messageEnabled = enabledSetting?.value === true;
-    posts = databasePosts;
-  } catch {
+  if (isFallbackStorageEnabled()) {
     const fallback = getFallbackSnapshot();
     message = fallback.message;
     messageEnabled = fallback.messageEnabled;
     posts = fallback.posts.slice(0, 8);
+  } else {
+    try {
+      const [messageSetting, enabledSetting, databasePosts] = await Promise.all([
+        db.setting.findUnique({ where: { key: "home_message" } }),
+        db.setting.findUnique({ where: { key: "home_message_enabled" } }),
+        db.post.findMany({ orderBy: { createdAt: "desc" }, take: 8 }),
+      ]);
+
+      message = typeof messageSetting?.value === "string" ? messageSetting.value : "";
+      messageEnabled = enabledSetting?.value === true;
+      posts = databasePosts;
+    } catch {
+      const fallback = getFallbackSnapshot();
+      message = fallback.message;
+      messageEnabled = fallback.messageEnabled;
+      posts = fallback.posts.slice(0, 8);
+    }
   }
 
   return (
