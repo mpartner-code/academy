@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { ADMIN_COOKIE_NAME, verifyAdminSession } from "@/lib/admin-auth";
 import { getFallbackSnapshot } from "@/lib/admin-fallback";
 import { db } from "@/lib/db";
+import { AdminSubmitButton } from "@/components/admin-submit-button";
 
 export const dynamic = "force-dynamic";
 
@@ -81,7 +82,7 @@ export default async function AdminPage({
               <input name="enabled" type="checkbox" defaultChecked={messageEnabled} />
               Ana səhifədə göstər
             </label>
-            <button className="button" type="submit">Bildirişi saxla</button>
+            <AdminSubmitButton>Bildirişi saxla</AdminSubmitButton>
           </form>
         </section>
 
@@ -101,7 +102,7 @@ export default async function AdminPage({
               <input name="published" type="checkbox" defaultChecked />
               Dərhal yayımla
             </label>
-            <button className="button" type="submit">Post əlavə et</button>
+            <AdminSubmitButton>Post əlavə et</AdminSubmitButton>
           </form>
 
           <div className="admin-post-list">
