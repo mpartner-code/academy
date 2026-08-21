@@ -9,8 +9,9 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
-    "build:hostinger": "prisma migrate deploy && npm run build",
+    "build": "prisma migrate deploy && prisma generate && next build",
+    "build:ci": "prisma generate && next build",
+    "build:hostinger": "npm run build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "prisma:generate": "prisma generate",
