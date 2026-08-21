@@ -1,12 +1,13 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { db } from "@/lib/db";
 import { isAuthorizedAdminRequest, isSameOriginRequest } from "@/lib/admin-request";
+import { redirectTo } from "@/lib/admin-response";
 
 export async function POST(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
-  if (!isAuthorizedAdminRequest(request)) return NextResponse.redirect(new URL("/admin/login", request.url), 303);
+  if (!isAuthorizedAdminRequest(request)) return redirectTo("/admin/login");
   if (!isSameOriginRequest(request)) return new NextResponse("Forbidden", { status: 403 });
 
   const { id } = await params;
@@ -22,5 +23,5 @@ export async function POST(
     data: { published, publishedAt: published ? new Date() : null },
   });
 
-  return NextResponse.redirect(new URL("/admin", request.url), 303);
+  return redirectTo("/admin");
 }

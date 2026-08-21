@@ -1,10 +1,11 @@
-import { NextResponse, type NextRequest } from "next/server";
+import type { NextRequest } from "next/server";
 import {
   ADMIN_COOKIE_NAME,
   adminCookieOptions,
   createAdminSession,
   verifyAdminCredentials,
 } from "@/lib/admin-auth";
+import { redirectTo } from "@/lib/admin-response";
 
 export async function POST(request: NextRequest) {
   const formData = await request.formData();
@@ -12,13 +13,13 @@ export async function POST(request: NextRequest) {
   const password = String(formData.get("password") ?? "");
 
   if (!verifyAdminCredentials(email, password)) {
-    return NextResponse.redirect(new URL("/admin/login?error=1", request.url), 303);
+    return redirectTo("/admin/login?error=1");
   }
 
   const token = createAdminSession(email);
-  if (!token) return NextResponse.redirect(new URL("/admin/login?error=config", request.url), 303);
+  if (!token) return redirectTo("/admin/login?error=config");
 
-  const response = NextResponse.redirect(new URL("/admin", request.url), 303);
+  const response = redirectTo("/admin");
   response.cookies.set(ADMIN_COOKIE_NAME, token, adminCookieOptions);
   return response;
 }

@@ -1,16 +1,17 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { db } from "@/lib/db";
 import { isAuthorizedAdminRequest, isSameOriginRequest } from "@/lib/admin-request";
+import { redirectTo } from "@/lib/admin-response";
 
 export async function POST(request: NextRequest) {
-  if (!isAuthorizedAdminRequest(request)) return NextResponse.redirect(new URL("/admin/login", request.url), 303);
+  if (!isAuthorizedAdminRequest(request)) return redirectTo("/admin/login");
   if (!isSameOriginRequest(request)) return new NextResponse("Forbidden", { status: 403 });
 
   const formData = await request.formData();
   const message = String(formData.get("message") ?? "").trim();
   const enabled = formData.get("enabled") === "on";
 
-  if (message.length > 180) return NextResponse.redirect(new URL("/admin?error=message", request.url), 303);
+  if (message.length > 180) return redirectTo("/admin?error=message");
 
   await db.$transaction([
     db.setting.upsert({
@@ -25,5 +26,5 @@ export async function POST(request: NextRequest) {
     }),
   ]);
 
-  return NextResponse.redirect(new URL("/admin?saved=1", request.url), 303);
+  return redirectTo("/admin?saved=1");
 }
