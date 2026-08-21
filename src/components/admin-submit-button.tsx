@@ -12,9 +12,12 @@ export function AdminSubmitButton({ children }: { children: string }) {
     setSubmitting(true);
 
     try {
+      const body = new URLSearchParams();
+      new FormData(form).forEach((value, key) => body.append(key, String(value)));
+
       const response = await fetch(form.action, {
         method: "POST",
-        body: new FormData(form),
+        body,
         credentials: "same-origin",
         redirect: "follow",
       });
