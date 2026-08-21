@@ -9,10 +9,10 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "prisma migrate deploy && prisma generate && next build",
+    "build": "prisma generate && next build",
     "build:ci": "prisma generate && next build",
     "build:hostinger": "npm run build",
-    "start": "next start",
+    "start": "prisma migrate deploy && next start",
     "typecheck": "tsc --noEmit",
     "prisma:generate": "prisma generate",
     "prisma:validate": "prisma validate",
@@ -34,3 +34,4 @@
     "typescript": "^5.8.2"
   }
 }
+
