@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { ADMIN_COOKIE_NAME, verifyAdminSession } from "@/lib/admin-auth";
+import { getFallbackSnapshot } from "@/lib/admin-fallback";
 import { db } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
@@ -19,15 +20,27 @@ export default async function AdminPage({
   const cookieStore = await cookies();
   if (!verifyAdminSession(cookieStore.get(ADMIN_COOKIE_NAME)?.value)) redirect("/admin/login");
 
-  const [{ saved, created, error }, messageSetting, enabledSetting, posts] = await Promise.all([
-    searchParams,
-    db.setting.findUnique({ where: { key: "home_message" } }),
-    db.setting.findUnique({ where: { key: "home_message_enabled" } }),
-    db.post.findMany({ orderBy: { createdAt: "desc" }, take: 8 }),
-  ]);
+  const { saved, created, error } = await searchParams;
+  let message = "";
+  let messageEnabled = false;
+  let posts: Array<{ id: number; title: string; published: boolean; createdAt: Date }> = [];
 
-  const message = typeof messageSetting?.value === "string" ? messageSetting.value : "";
-  const messageEnabled = enabledSetting?.value === true;
+  try {
+    const [messageSetting, enabledSetting, databasePosts] = await Promise.all([
+      db.setting.findUnique({ where: { key: "home_message" } }),
+      db.setting.findUnique({ where: { key: "home_message_enabled" } }),
+      db.post.findMany({ orderBy: { createdAt: "desc" }, take: 8 }),
+    ]);
+
+    message = typeof messageSetting?.value === "string" ? messageSetting.value : "";
+    messageEnabled = enabledSetting?.value === true;
+    posts = databasePosts;
+  } catch {
+    const fallback = getFallbackSnapshot();
+    message = fallback.message;
+    messageEnabled = fallback.messageEnabled;
+    posts = fallback.posts.slice(0, 8);
+  }
 
   return (
     <main className="admin-shell">
@@ -116,3 +129,4 @@ export default async function AdminPage({
     </main>
   );
 }
+

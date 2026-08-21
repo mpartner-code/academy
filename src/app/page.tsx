@@ -1,4 +1,5 @@
 import { db } from "@/lib/db";
+import { getFallbackSnapshot } from "@/lib/admin-fallback";
 
 export const dynamic = "force-dynamic";
 
@@ -21,7 +22,12 @@ async function getHomeContent() {
       posts,
     };
   } catch {
-    return { message: "", messageEnabled: false, posts: [] };
+    const fallback = getFallbackSnapshot();
+    return {
+      message: fallback.message,
+      messageEnabled: fallback.messageEnabled,
+      posts: fallback.posts.filter((post) => post.published).slice(0, 3),
+    };
   }
 }
 
@@ -68,3 +74,4 @@ export default async function Home() {
     </main>
   );
 }
+

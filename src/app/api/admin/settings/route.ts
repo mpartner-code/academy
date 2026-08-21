@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { db } from "@/lib/db";
+import { saveFallbackSettings } from "@/lib/admin-fallback";
 import { isAuthorizedAdminRequest, isSameOriginRequest } from "@/lib/admin-request";
 import { redirectTo } from "@/lib/admin-response";
 
@@ -13,18 +14,23 @@ export async function POST(request: NextRequest) {
 
   if (message.length > 180) return redirectTo("/admin?error=message");
 
-  await db.$transaction([
-    db.setting.upsert({
-      where: { key: "home_message" },
-      update: { value: message },
-      create: { key: "home_message", value: message },
-    }),
-    db.setting.upsert({
-      where: { key: "home_message_enabled" },
-      update: { value: enabled },
-      create: { key: "home_message_enabled", value: enabled },
-    }),
-  ]);
+  try {
+    await db.$transaction([
+      db.setting.upsert({
+        where: { key: "home_message" },
+        update: { value: message },
+        create: { key: "home_message", value: message },
+      }),
+      db.setting.upsert({
+        where: { key: "home_message_enabled" },
+        update: { value: enabled },
+        create: { key: "home_message_enabled", value: enabled },
+      }),
+    ]);
+  } catch {
+    saveFallbackSettings(message, enabled);
+  }
 
   return redirectTo("/admin?saved=1");
 }
+

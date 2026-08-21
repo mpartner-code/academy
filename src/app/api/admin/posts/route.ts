@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { db } from "@/lib/db";
+import { createFallbackPost } from "@/lib/admin-fallback";
 import { isAuthorizedAdminRequest, isSameOriginRequest } from "@/lib/admin-request";
 import { redirectTo } from "@/lib/admin-response";
 
@@ -26,15 +27,22 @@ export async function POST(request: NextRequest) {
     return redirectTo("/admin?error=post");
   }
 
-  await db.post.create({
-    data: {
-      slug: `${slugify(title)}-${Date.now().toString(36)}`,
-      title,
-      excerpt: excerpt || null,
-      published,
-      publishedAt: published ? new Date() : null,
-    },
-  });
+  const slug = `${slugify(title)}-${Date.now().toString(36)}`;
+
+  try {
+    await db.post.create({
+      data: {
+        slug,
+        title,
+        excerpt: excerpt || null,
+        published,
+        publishedAt: published ? new Date() : null,
+      },
+    });
+  } catch {
+    createFallbackPost({ slug, title, excerpt: excerpt || null, published });
+  }
 
   return redirectTo("/admin?created=1");
 }
+
